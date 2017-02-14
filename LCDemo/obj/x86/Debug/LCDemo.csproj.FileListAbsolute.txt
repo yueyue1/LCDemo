@@ -1,0 +1,15 @@
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\bin\x86\Debug\LCDemo.exe.config
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\obj\x86\Debug\LCDemo.csproj.ResolveComReference.cache
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\bin\x86\Debug\LCDemo.exe
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\bin\x86\Debug\LCDemo.pdb
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\bin\x86\Debug\Interop.WMPLib.dll
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\bin\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\obj\x86\Debug\LCDemo.csprojResolveAssemblyReference.cache
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\obj\x86\Debug\LCDemo.Form1.resources
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\obj\x86\Debug\LCDemo.frmMain.resources
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\obj\x86\Debug\LCDemo.Properties.Resources.resources
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\obj\x86\Debug\LCDemo.csproj.GenerateResource.Cache
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\obj\x86\Debug\LCDemo.exe
+C:\Users\yueyue\Desktop\LCDemo\LCDemo\LCDemo\obj\x86\Debug\LCDemo.pdb
