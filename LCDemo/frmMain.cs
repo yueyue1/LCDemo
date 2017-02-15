@@ -35,33 +35,25 @@ namespace LCDemo
         {
             this.listBox1.Items.Clear();
             string deviceList = "";
-            if (LCSDK.LCOpenSDK_GetdeviceList(Form1.token, "1-100", ref deviceList, 0))
+            if (LCSDK.LCOpenSDK_GetdeviceList(Form1.token, "1-100", ref deviceList, 1))
             {
                 JObject jsonObj = (JObject)JsonConvert.DeserializeObject(deviceList);
-                int deviceCount = jsonObj["devices"].Count();
                 int channelTotalCount = 0;
-                for (int i = 0; i < deviceCount; i++)
-                {
-                    deviceJsonObj[i] = (JObject)jsonObj["devices"][i];//
-                    int channelCount = deviceJsonObj[i]["channels"].Count();
-                    for (int j = 0; j < channelCount; j++)
-                    {
-                        string channelId = deviceJsonObj[i]["channels"][j]["channelId"].ToString();
-                        deviceInfoList[channelTotalCount] = new _dhlc_device_t();
-                        deviceInfoList[channelTotalCount].definitionMode = 0;
-                        deviceInfoList[channelTotalCount].objectIndex = objectIndex;
-                        deviceInfoList[channelTotalCount].channelIndex = int.Parse(channelId);
-                        deviceInfoList[channelTotalCount].deviceID = deviceJsonObj[i]["deviceId"].ToString();
-                        deviceInfoList[channelTotalCount].token =Form1.token;
-                        deviceInfoList[channelTotalCount].playType = PlayCtrlType.PLAYCTRL_REALPLAY;
-                        deviceInfoList[channelTotalCount].hWnd = (int)picVideo.Handle;
+                this.listBox1.Items.Clear();
 
-                        AddVideo(channelTotalCount, deviceJsonObj[i]["name"].ToString(), channelId
-                            , deviceJsonObj[i]["channels"][j]["channelOnline"].ToString(), deviceJsonObj[i]["channels"][j]["channelPicUrl"].ToString());
-                        channelTotalCount++;
-                    }
-                }
+                deviceInfoList[channelTotalCount] = new _dhlc_device_t();
+                deviceInfoList[channelTotalCount].definitionMode = 0;//分辨率模式 0-高清 1-标清
+                deviceInfoList[channelTotalCount].objectIndex = objectIndex;//视频播放类对象的标识ID
+                deviceInfoList[channelTotalCount].channelIndex = 1;//播放设备通道号
+                deviceInfoList[channelTotalCount].deviceID = "2G03408PAF01491";//设备ID
+                deviceInfoList[channelTotalCount].token = Form1.token;
+                deviceInfoList[channelTotalCount].playType = PlayCtrlType.PLAYCTRL_REALPLAY;//播放模式 实时
+                deviceInfoList[channelTotalCount].hWnd = (int)picVideo.Handle;//视频窗口句柄
+
+                channelTotalCount++;
+                objectIndex--;
                 nowDeviceInfo = deviceInfoList[0];
+                objectIndex = 100;
             }
             else
             {
@@ -215,31 +207,20 @@ namespace LCDemo
             if (LCSDK.LCOpenSDK_GetdeviceList(Form1.token, "1-100", ref deviceList, 1))
             {
                 JObject jsonObj = (JObject)JsonConvert.DeserializeObject(deviceList);
-                int deviceCount = jsonObj["devices"].Count();
                 int channelTotalCount = 0;
                 this.listBox1.Items.Clear();
-                for (int i = 0; i < deviceCount; i++)
-                {
-                    deviceJsonObj[i] = (JObject)jsonObj["devices"][i];//
-                    int channelCount = deviceJsonObj[i]["channels"].Count();
-                    for (int j = 0; j < channelCount; j++)
-                    {
-                        string channelId = deviceJsonObj[i]["channels"][j]["channelId"].ToString();
-                        deviceInfoList[channelTotalCount] = new _dhlc_device_t();
-                        deviceInfoList[channelTotalCount].definitionMode = 0;//分辨率模式 0-高清 1-标清
-                        deviceInfoList[channelTotalCount].objectIndex = objectIndex;//视频播放类对象的标识ID
-                        deviceInfoList[channelTotalCount].channelIndex = int.Parse(channelId);//播放设备通道号
-                        deviceInfoList[channelTotalCount].deviceID = deviceJsonObj[i]["deviceId"].ToString();//设备ID
-                        deviceInfoList[channelTotalCount].token = Form1.token;
-                        deviceInfoList[channelTotalCount].playType = PlayCtrlType.PLAYCTRL_REALPLAY;//播放模式 实时
-                        deviceInfoList[channelTotalCount].hWnd = (int)picVideo.Handle;//视频窗口句柄
 
-                        AddVideo(channelTotalCount, deviceJsonObj[i]["name"].ToString(), channelId
-                            , deviceJsonObj[i]["channels"][j]["channelOnline"].ToString(), deviceJsonObj[i]["channels"][j]["channelPicUrl"].ToString());
-                        channelTotalCount++;
-                        objectIndex--;
-                    }
-                }
+                deviceInfoList[channelTotalCount] = new _dhlc_device_t();
+                deviceInfoList[channelTotalCount].definitionMode = 0;//分辨率模式 0-高清 1-标清
+                deviceInfoList[channelTotalCount].objectIndex = objectIndex;//视频播放类对象的标识ID
+                deviceInfoList[channelTotalCount].channelIndex = 1;//播放设备通道号
+                deviceInfoList[channelTotalCount].deviceID = "2G03408PAF01491";//设备ID
+                deviceInfoList[channelTotalCount].token = Form1.token;
+                deviceInfoList[channelTotalCount].playType = PlayCtrlType.PLAYCTRL_REALPLAY;//播放模式 实时
+                deviceInfoList[channelTotalCount].hWnd = (int)picVideo.Handle;//视频窗口句柄
+
+                channelTotalCount++;
+                objectIndex--;
                 nowDeviceInfo = deviceInfoList[0];
                 objectIndex = 100;
             }
